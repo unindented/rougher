@@ -1,0 +1,97 @@
+{
+  "name": "rougher",
+  "description": "Rough up an SVG using Rough.js.",
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "homepage": "https://github.com/unindented/rougher",
+  "author": {
+    "name": "Daniel Perez Alvarez",
+    "email": "unindented@gmail.com",
+    "url": "http://unindented.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unindented/rougher.git"
+  },
+  "bin": {
+    "rougher": "dist/cli/rougher.js"
+  },
+  "browser": "dist/browser/rougher.js",
+  "main": "dist/node/rougher.js",
+  "module": "dist/node/rougher.mjs",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=14",
+    "npm": ">=6"
+  },
+  "scripts": {
+    "clean:coverage": "rimraf coverage",
+    "clean:dist": "rimraf dist",
+    "clean": "run-p clean:*",
+    "build:dist": "rollup --config config/rollup/config.js",
+    "build:chmod": "chmod +x dist/cli/rougher.js",
+    "build": "run-s clean build:*",
+    "test:lint": "eslint --ext .js,.ts .",
+    "test:unit": "jest --coverage --config config/jest/config.json",
+    "test": "run-s test:*",
+    "watch:unit": "npm run test:unit -- --watch",
+    "watch:build": "npm run build:dist -- --watch",
+    "prepublishOnly": "npm run build",
+    "semantic-release": "semantic-release"
+  },
+  "dependencies": {
+    "arg": "^5.0.0",
+    "chalk": "^4.1.0",
+    "jsdom": "^16.4.0",
+    "roughjs": "^4.3.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-typescript": "^6.1.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@types/jsdom": "^16.2.5",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "commitizen": "^4.2.2",
+    "conventional-changelog-conventionalcommits": "^4.5.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jest-formatting": "^2.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.34.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "semantic-release": "^17.3.0",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -V -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

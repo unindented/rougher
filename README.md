@@ -5,6 +5,12 @@ Rough up an SVG using Rough.js.
 ## Table of contents
 
 - [Install](#install)
+- [Usage](#usage)
+  - [CLI](#cli)
+  - [Node (ESM)](#node-esm)
+  - [Node (CJS)](#node-cjs)
+  - [Browser (ESM)](#browser-esm)
+  - [Browser (IIFE)](#browser-iife)
 - [Build](#build)
 - [Test](#test)
 - [Meta](#meta)

@@ -52,7 +52,7 @@ export default [
       file: "dist/node/rougher.mjs",
       format: "es",
     },
-    external: ["jsdom", "roughjs"],
+    external: ["jsdom", "roughjs", "w3c-xmlserializer"],
     plugins: esPlugins,
   },
   {
@@ -62,7 +62,7 @@ export default [
       format: "cjs",
       exports: "default",
     },
-    external: ["jsdom", "roughjs"],
+    external: ["jsdom", "roughjs", "w3c-xmlserializer"],
     plugins: cjsPlugins,
   },
 ];

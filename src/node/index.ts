@@ -7,7 +7,11 @@ import roughUp from "../shared";
 export default (input: string, options: Options = {}): string => {
   const { window } = new JSDOM(input, { contentType: "image/svg+xml" });
 
-  const svg = window.document.querySelector("svg") as SVGSVGElement;
+  const svg = window.document.documentElement;
+
+  if (!(svg instanceof window.SVGSVGElement)) {
+    throw new Error("Not an SVG");
+  }
 
   roughUp(svg, options);
 

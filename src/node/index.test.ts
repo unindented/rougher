@@ -15,4 +15,15 @@ describe("node roughUp", () => {
       expect(roughUp(fixture)).toMatchSnapshot();
     });
   });
+
+  describe.each`
+    case                  | fixture
+    ${"has no namespace"} | ${readFixture("no-namespace.svg")}
+    ${"not SVG"}          | ${readFixture("not-svg.xml")}
+    ${"not XML"}          | ${readFixture("not-xml.txt")}
+  `("when $case", ({ fixture }: { fixture: string }) => {
+    it("throws an error", () => {
+      expect(() => roughUp(fixture)).toThrow();
+    });
+  });
 });

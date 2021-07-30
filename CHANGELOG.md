@@ -1,3 +1,10 @@
+### [1.1.2](https://github.com/unindented/rougher/compare/v1.1.1...v1.1.2) (2021-07-30)
+
+
+### Bug Fixes
+
+* allow the Node ES module build to run ([#3](https://github.com/unindented/rougher/issues/3)) ([0d75f2e](https://github.com/unindented/rougher/commit/0d75f2ed7c49933999cf58ba7e40d49cab60de34)), closes [#2](https://github.com/unindented/rougher/issues/2)
+
 ### [1.1.1](https://github.com/unindented/rougher/compare/v1.1.0...v1.1.1) (2021-07-30)
 
 

@@ -1,3 +1,10 @@
+### [1.1.1](https://github.com/unindented/rougher/compare/v1.1.0...v1.1.1) (2021-07-30)
+
+
+### Bug Fixes
+
+* serialize SVGs correctly ([#2](https://github.com/unindented/rougher/issues/2)) ([98a27a3](https://github.com/unindented/rougher/commit/98a27a354ac1ab4df15569163287aedd1301af83))
+
 ## [1.1.0](https://github.com/unindented/rougher/compare/v1.0.0...v1.1.0) (2020-12-01)
 
 
